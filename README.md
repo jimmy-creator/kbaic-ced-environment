@@ -87,7 +87,7 @@ Make sure all files in the directory have executable permission.
 Copy the files to where OS executables are stored.
 
 ```bash
-sudo cp {abigen,bootnode,clef,evm,geth,puppeth,rlpdump} /usr/local/bin/
+sudo cp {abigen,bootnode,clef,evm,geth,rlpdump} /usr/local/bin/
 ```
 check version
 ```bash
