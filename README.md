@@ -106,4 +106,43 @@ geth --datadir "data" account new
 ```
 
 
+### genesis.json
+
+Create a new file in the directory named genesis.json and copy the below configuration into it.
+```
+{
+  "config": {
+    "chainId": 5777,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirglacierBlock":0,
+    "berlinBlock":0,
+    "londonBlock":0,
+    "ethash": {}
+  },
+  "difficulty": "1",
+  "gasLimit": "8000000",
+  "alloc": {
+    "0x9Fc8c0DC95Cf0e9A4aCB85f6080d9dBe5D0A324c": { "balance": "300000" }
+  }
+}
+```
+Now to create an Ethereum blockchain node that uses a genesis block based on the above configuration, execute the following command
+
+```
+geth --datadir "data" init genesis.json
+```
+
+Now the final step is to bring the node by executing the following command:
+
+```
+geth --identity "KBA" --networkid "5777" --datadir "data" --http --http.port "8545" --unlock "0" --http.corsdomain "*" --http.api "miner,eth,net,web3,personal" --allow-insecure-unlock --nodiscover --miner.etherbase "0"
+```
+
 
