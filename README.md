@@ -93,6 +93,10 @@ check version
 ```bash
  geth version
 ```
+spin up developer mode 
+```
+geth --dev --http --http.api eth,web3,net --http.corsdomain "http://remix.ethereum.org"
+```
 
 Running ethereum private network
 
